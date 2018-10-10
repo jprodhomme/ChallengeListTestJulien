@@ -37,7 +37,11 @@ public class ChallengeListTest{
   }
 
   public static void testTarif(){
+<<<<<<< HEAD
   afaire
+=======
+    a   faire
+>>>>>>> master
   }
 
   public static void testCaGele(){
