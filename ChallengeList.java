@@ -22,8 +22,13 @@ public class ChallengeList {
   * ex "ABCDDFAB" : true
   */
   public static boolean commenceFini(String mot){
-    // TODO @A
-    return false;
+    String sub1 = mot.substring(0, 1);
+    String sub2 = mot.substring((mot.length() -2), (mot.length()-1));
+    if (sub1.equals(sub2)){
+      return true;
+    } else {
+      return false;
+    }
   }
 
   /**
@@ -32,8 +37,16 @@ public class ChallengeList {
   * "AAAHAA" : true
   */
   public static boolean nonMonotone(String mot){
-    // TODO @B
-    return false;
+    String[]arrayLetters = mot.split("");
+    int i = 0;
+
+    for(String letter:arrayLetters){
+      if (letter.equals(arrayLetters[i+1])){
+        i++;
+      }else if(i == arrayLetters.length){
+        return false;
+      }
+    }return true;
   }
 
   /**

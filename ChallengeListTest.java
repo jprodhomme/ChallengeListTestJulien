@@ -25,11 +25,15 @@ public class ChallengeListTest{
   }
 
   public static void testCommenceFini(){
-    // TODO @B
+    assertTrue("OK -->testCommence", ChallengeList.commenceFini("bebe"));
+    assertFalse("OK -->testCommence", ChallengeList.commenceFini("java"));
+
   }
 
   public static void testNonMonotone(){
-    // TODO @A
+    assertTrue("OK --> testMonotone", ChallengeList.nonMonotone("babababa"));
+    assertTrue("OK --> testMonotone", ChallengeList.nonMonotone("bbbababa"));
+    assertFalse("OK --> testMonotone", ChallengeList.nonMonotone("aaaaaaaaaa"));
   }
 
   public static void testTarif(){
