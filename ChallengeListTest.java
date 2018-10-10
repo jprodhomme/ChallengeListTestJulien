@@ -37,7 +37,7 @@ public class ChallengeListTest{
   }
 
   public static void testTarif(){
-    // TODO @B
+  afaire
   }
 
   public static void testCaGele(){
