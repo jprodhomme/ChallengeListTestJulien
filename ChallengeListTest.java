@@ -1,6 +1,7 @@
 import java.util.Arrays;
-
 public class ChallengeListTest{
+
+
 
   /**
   * Les tests sont à écrire ici.
@@ -9,11 +10,18 @@ public class ChallengeListTest{
 
 
   public static void testMoyenne(){
-    // TODO @B
+      assertEquals("ok-->la moyenne",12,ChallengeList.moyenne(10,14));
+      assertEquals("ok-->la moyenne",12,ChallengeList.moyenne(12,12));
+      assertEquals("ok-->la moyenne",12,ChallengeList.moyenne(8,16));
+      assertEquals("ok-->la moyenne",12,ChallengeList.moyenne(6,18));
+      assertEquals("ok-->la moyenne",12,ChallengeList.moyenne(4,20));
+    //throw.error("fucku");
   }
 
   public static void testPerimetreCarre(){
-    // TODO @A
+    assertEquals("OK -->perimetre", 4, ChallengeList.perimetreCarre(2));
+    assertEquals("OK -->perimetre", 1, ChallengeList.perimetreCarre(1));
+    assertEquals("OK -->perimetre", 9, ChallengeList.perimetreCarre(-3));
   }
 
   public static void testCommenceFini(){
