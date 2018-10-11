@@ -1,4 +1,6 @@
 import java.util.Arrays;
+
+
 public class ChallengeListTest{
 
 
@@ -53,7 +55,10 @@ public class ChallengeListTest{
   }
 
   public static void testFiltreShort(){
-    // TODO @B
+    String[] nameList = new String[] {"pierre", "julien", "jo", "al"};
+    String[] nameExpected = new String[] {"pierre", "julien"};
+
+    assertEquals("OK --> short", nameExpected, ChallengeList.filtreShort(nameList));
   }
 
   // public static void testFiltreLetter(){

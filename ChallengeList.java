@@ -63,10 +63,10 @@ public class ChallengeList {
   public static String tarif(int age){
     String[] priceArray = {"gratuit", "reduit", "plein", "erreur" };
 
-    if(age >= 3){
+    if(0 <= age && age <= 3){
       return priceArray[0];
     }
-    else if(3 < age || age >= 12){
+    else if(3 < age && age <= 12){
       return priceArray[1];
     }
     else if(age > 12){
@@ -86,10 +86,10 @@ public class ChallengeList {
   public static String caGele(int temperature){
     String[] temperatureArray = {"ça gèle", "ça caille", "RAS", "ça bouille", "erreur"};
     
-    if(0 < temperature && temperature > -274){
+    if( temperature <0  && temperature > -274){
       return temperatureArray[0];
     }
-    else if (0 < temperature && 5 < temperature){
+    else if (0 <= temperature && temperature <= 5){
         return temperatureArray[1];
     } 
     else if (temperature > 5 && temperature < 90){
