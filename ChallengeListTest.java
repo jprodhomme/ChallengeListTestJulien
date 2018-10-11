@@ -33,11 +33,14 @@ public class ChallengeListTest{
   public static void testNonMonotone(){
     assertTrue("OK --> testMonotone", ChallengeList.nonMonotone("babababa"));
     assertTrue("OK --> testMonotone", ChallengeList.nonMonotone("bbbababa"));
-    assertFalse("OK --> testMonotone", ChallengeList.nonMonotone("aaaaaaaaaa"));
+    assertFalse("OK --> testMonotone", ChallengeList.nonMonotone("aaa"));
   }
 
   public static void testTarif(){
-    a   faire;
+    assertEquals("OK --> testTarif", "gratuit", ChallengeList.tarif(2));
+    assertEquals("OK --> testTarif", "reduit", ChallengeList.tarif(5));
+    assertEquals("OK --> testTarif", "plein", ChallengeList.tarif(13));
+    assertEquals("OK --> testTarif", "erreur", ChallengeList.tarif(-2));
   }
 
   public static void testCaGele(){
@@ -80,7 +83,7 @@ public class ChallengeListTest{
     testTarif();
     testCaGele();
     testFiltreShort();
-    testFiltreLetter();
+   // testFiltreLetter();
   }
   public static void assertEquals(String message, String expected, String res){
     if(expected.equals(res)){
@@ -100,12 +103,12 @@ public class ChallengeListTest{
     }
   }
 
-  public static void assertEquals(String message, String[] expected, Char res) {
+  public static void assertEquals(String message, String[] expected, char res) {
     if (expected[0].equals(res)) {
       System.out.println("\nOK >> " + message);
     } else {
       throw new Error(
-          "\nKO!! >> " + message + " (exp : " + Arrays.toString(expected) + ", res : " + Arrays.toString(res) + ")");
+          "\nKO!! >> " + message + " (exp : " + Arrays.toString(expected) + ", res : " + res + ")");
     }
   }
 

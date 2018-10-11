@@ -1,5 +1,9 @@
 import java.util.ArrayList;
 
+//import com.sun.xml.internal.xsom.impl.Ref.Term;
+
+//import sun.util.resources.cldr.ext.TimeZoneNames_pt_MZ;
+
 public class ChallengeList {
 
   /**
@@ -40,15 +44,13 @@ public class ChallengeList {
   */
   public static boolean nonMonotone(String mot){
     String[]arrayLetters = mot.split("");
-    int i = 0;
-
-    for(String letter:arrayLetters){
-      if (letter.equals(arrayLetters[i+1])){
-        i++;
-      }else if(i == arrayLetters.length){
-        return false;
-      }
-    }return true;
+     boolean result = true;
+    for(String letter: arrayLetters){
+      if(!letter.equals(arrayLetters[0])){
+       result = true;
+      } else result = false;
+    }
+    return result;
   }
 
   /**
@@ -82,19 +84,34 @@ public class ChallengeList {
   * "erreur" si la température est inférieure à -274
   **/
   public static String caGele(int temperature){
-    // TODO @B
-    return null;
+    String[] temperatureArray = {"ça gèle", "ça caille", "RAS", "ça bouille", "erreur"};
+    
+    if(0 < temperature && temperature > -274){
+      return temperatureArray[0];
+    }
+    else if (0 < temperature && 5 < temperature){
+        return temperatureArray[1];
+    } 
+    else if (temperature > 5 && temperature < 90){
+      return temperatureArray[2];
+    } 
+    else if (temperature > 90) {
+        return temperatureArray[3];
+    } 
+    else {
+      return temperatureArray[4];
+    }
   }
 
   /**
   * parcourt le tableau de noms et retourne une liste de tous les noms qui ont une longueur > 2
   **/
   public static String[] filtreShort(String[] noms){
-    List nameList = new ArrayList();
+    ArrayList<String> nameList = new ArrayList<String>();
 
     for(String name:noms){
       if(name.length() > 2){
-        nameList += name;
+        nameList.add(name);
       }
     }
     String[] nameArray = nameList.toArray(new String[nameList.size()]);
