@@ -57,11 +57,11 @@ public class ChallengeListTest {
         assertEquals("OK --> short", nameExpected, ChallengeList.filtreShort(nameList));
     }
 
-    // public static void testFiltreLetter(){
-    // String[] nameArray = {"annabelle","jaques"};
-    // assertEquals("ok-->temperature", "annabelle",
-    // ChallengeList.filtreLetter(nameArray, 'a'));
-    // }
+    public static void testFiltreLetter(){
+    String[] nameList = new String[] { "annabelle","pierre", "julien", "jo", "al" };
+     String[] nameArray = {"annabelle","al"};
+     assertEquals("ok-->temperature", nameArray,ChallengeList.filtreLetter(nameList, 'a'));
+    }
 
     /**
      * un exemple de test
@@ -83,7 +83,7 @@ public class ChallengeListTest {
         testTarif();
         testCaGele();
         testFiltreShort();
-        // testFiltreLetter();
+        testFiltreLetter();
     }
 
     public static void assertEquals(String message, String expected, String res) {

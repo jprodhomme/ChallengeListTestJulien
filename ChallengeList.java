@@ -123,8 +123,25 @@ public class ChallengeList {
   * parcourt le tableau de noms et retourne une liste de tous les noms qui commencent par lettre
   **/
   public static String[] filtreLetter(String[] noms, char lettre){
-    //test ignore
-    return null;
+    int i = 0;
+    int j = 0;
+    String[] newArray;
+    int sum = 0;
+    while ( i < noms.length){
+      if(noms[i].charAt(0) == lettre){
+        sum++;
+      }
+      i++;
+    }
+    newArray = new  String[sum];
+    while (j < noms.length) {
+      if (noms[j].charAt(0) == lettre) {
+        newArray[j] = noms[j];
+      }
+      j++;
+    }
+
+    return newArray;
   }
 
 
