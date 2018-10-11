@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class ChallengeList {
 
   /**
@@ -57,8 +59,18 @@ public class ChallengeList {
   * "erreur" si age négatif
   **/
   public static String tarif(int age){
-    // TODO @A
-    return null;
+    String[] priceArray = {"gratuit", "reduit", "plein", "erreur" };
+
+    if(age >= 3){
+      return priceArray[0];
+    }
+    else if(3 < age || age >= 12){
+      return priceArray[1];
+    }
+    else if(age > 12){
+      return priceArray[2];
+    } 
+    else return priceArray[3];
   }
 
   /**
@@ -78,8 +90,16 @@ public class ChallengeList {
   * parcourt le tableau de noms et retourne une liste de tous les noms qui ont une longueur > 2
   **/
   public static String[] filtreShort(String[] noms){
-    // TODO @A
-    return null;
+    List nameList = new ArrayList();
+
+    for(String name:noms){
+      if(name.length() > 2){
+        nameList += name;
+      }
+    }
+    String[] nameArray = nameList.toArray(new String[nameList.size()]);
+
+    return nameArray;
   }
 
   /**

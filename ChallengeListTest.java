@@ -37,20 +37,26 @@ public class ChallengeListTest{
   }
 
   public static void testTarif(){
-    a   faire
+    a   faire;
   }
 
   public static void testCaGele(){
-    // TODO @A
+    assertEquals("ok-->temperature","ça gèle", ChallengeList.caGele(-1));
+    assertEquals("ok-->temperature","ça caille", ChallengeList.caGele(1));
+    assertEquals("ok-->temperature","RAS", ChallengeList.caGele(10));
+    assertEquals("ok-->temperature","ça bouille", ChallengeList.caGele(91));
+    assertEquals("ok-->temperature","erreur", ChallengeList.caGele(-274));
+    assertEquals("ok-->temperature","erreur", ChallengeList.caGele(-300));
   }
 
   public static void testFiltreShort(){
     // TODO @B
   }
 
-  public static void testFiltreLetter(){
-    // TODO @A
-  }
+  // public static void testFiltreLetter(){
+  //   String[] nameArray = {"annabelle","jaques"};
+  //   assertEquals("ok-->temperature", "annabelle", ChallengeList.filtreLetter(nameArray, 'a'));
+  // }
 
 
   /**
@@ -76,13 +82,30 @@ public class ChallengeListTest{
     testFiltreShort();
     testFiltreLetter();
   }
-
-  public static void assertEquals(String message, String[] expected, String[] res){
-    if (java.util.Arrays.deepEquals(expected, res)) {
-      System.out.println("\nOK >> "+message);
+  public static void assertEquals(String message, String expected, String res){
+    if(expected.equals(res)){
+      System.out.print("\nOK >> " + message);
+    } else {
+      throw new Error(
+          "\nKO!! >> " + message + " (exp : " + expected + ", res : " + res + ")");
     }
-    else {
-      throw new Error("\nKO!! >> "+message+" (exp : "+Arrays.toString(expected)+", res : "+Arrays.toString(res)+")");
+  }
+
+  public static void assertEquals(String message, String[] expected, String[] res) {
+    if (java.util.Arrays.deepEquals(expected, res)) {
+      System.out.println("\nOK >> " + message);
+    } else {
+      throw new Error(
+          "\nKO!! >> " + message + " (exp : " + Arrays.toString(expected) + ", res : " + Arrays.toString(res) + ")");
+    }
+  }
+
+  public static void assertEquals(String message, String[] expected, Char res) {
+    if (expected[0].equals(res)) {
+      System.out.println("\nOK >> " + message);
+    } else {
+      throw new Error(
+          "\nKO!! >> " + message + " (exp : " + Arrays.toString(expected) + ", res : " + Arrays.toString(res) + ")");
     }
   }
 
