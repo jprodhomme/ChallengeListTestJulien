@@ -13,7 +13,6 @@ public class ChallengeListTest {
         assertEquals("ok-->la moyenne", 12, ChallengeList.moyenne(8, 16));
         assertEquals("ok-->la moyenne", 12, ChallengeList.moyenne(6, 18));
         assertEquals("ok-->la moyenne", 12, ChallengeList.moyenne(4, 20));
-        // throw.error("fucku");
     }
 
     public static void testPerimetreCarre() {
@@ -57,10 +56,10 @@ public class ChallengeListTest {
         assertEquals("OK --> short", nameExpected, ChallengeList.filtreShort(nameList));
     }
 
-    public static void testFiltreLetter(){
-    String[] nameList = new String[] { "annabelle","pierre", "julien", "jo", "al" };
-     String[] nameArray = {"annabelle","al"};
-     assertEquals("ok-->temperature", nameArray,ChallengeList.filtreLetter(nameList, 'a'));
+    public static void testFiltreLetter() {
+        String[] nameList = new String[] { "annabelle", "pierre", "julien", "jo", "al" };
+        String[] nameArray = { "annabelle", "al" };
+        assertEquals("ok-->StartingLetter", nameArray, ChallengeList.filtreLetter(nameList, 'a'));
     }
 
     /**
